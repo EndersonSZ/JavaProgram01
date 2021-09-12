@@ -1,0 +1,45 @@
+public class Conta {
+    //atributo
+    public double saldo;
+   
+    //metodo
+    public void imprimeExtrato(){
+        System.out.println("mostrar:" + saldo);
+    
+
+}
+
+public static void main(String[] args) {
+
+    Conta cash = new Conta();
+    
+    cash.saldo = 1200;
+
+    //invocando metodo
+    cash.imprimeExtrato();
+        
+    
+}
+
+abstract class conta{
+    private double saldo;
+
+    public void setsaldo(double saldo){
+        this.saldo = saldo;
+    }
+
+    public double getSaldo(){
+        return saldo;
+    }
+
+    public abstract void imprimeExtrato();
+}
+
+
+public class ContaPoupa extends conta{
+    @Override
+    public void imprimeExtrato(){
+        System.out.println("extrato da conta:"+ this.getSaldo);
+    }
+}
+}
